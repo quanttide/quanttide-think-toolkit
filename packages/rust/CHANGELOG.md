@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.1.0-alpha.3] - 2026-06-09
+
+### Changed
+
+- serde_json made unconditional (required by Mapping.action: Value)
+- json feature becomes marker; yaml feature controls serde_yaml
+- add Pydantic-style ser module (ToJson/FromJson/ToYaml/FromYaml)
+
 ## [0.1.0-alpha.2] - 2026-06-09
 
 ### Changed
