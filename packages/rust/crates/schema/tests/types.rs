@@ -1,4 +1,4 @@
-use qtcloud_think_schema::{
+use quanttide_think_schema::{
     Bias, Causal, Entity, KeyValue, Mapping, Schema, SchemaContent,
 };
 use serde_json::Value;

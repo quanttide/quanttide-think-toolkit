@@ -1,5 +1,5 @@
 [package]
-name = "qtcloud-think-schema"
+name = "quanttide-think-schema"
 version.workspace = true
 edition.workspace = true
 

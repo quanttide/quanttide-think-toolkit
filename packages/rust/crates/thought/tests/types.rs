@@ -1,4 +1,4 @@
-use qtcloud_think_thought::Thought;
+use quanttide_think_thought::Thought;
 use chrono::{DateTime, Utc};
 use uuid::Uuid;
 

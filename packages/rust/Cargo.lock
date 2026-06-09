@@ -271,7 +271,11 @@ dependencies = [
 ]
 
 [[package]]
-name = "qtcloud-think-intention"
+name = "quanttide-think"
+version = "0.1.0"
+
+[[package]]
+name = "quanttide-think-intention"
 version = "0.1.0"
 dependencies = [
  "serde",
@@ -280,7 +284,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "qtcloud-think-schema"
+name = "quanttide-think-schema"
 version = "0.1.0"
 dependencies = [
  "serde",
@@ -290,7 +294,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "qtcloud-think-situation"
+name = "quanttide-think-situation"
 version = "0.1.0"
 dependencies = [
  "serde",
@@ -299,7 +303,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "qtcloud-think-thought"
+name = "quanttide-think-thought"
 version = "0.1.0"
 dependencies = [
  "chrono",
@@ -307,10 +311,6 @@ dependencies = [
  "serde_yaml",
  "uuid",
 ]
-
-[[package]]
-name = "quanttide-think"
-version = "0.1.0"
 
 [[package]]
 name = "quote"
