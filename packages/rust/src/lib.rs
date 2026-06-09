@@ -6,6 +6,7 @@ pub mod thought;
 pub mod intention;
 pub mod situation;
 pub mod schema;
+pub mod ser;
 
 pub use thought::*;
 pub use intention::*;
