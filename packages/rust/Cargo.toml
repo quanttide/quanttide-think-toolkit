@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/qtcloud-think-thought",
+    "crates/qtcloud-think-intention",
+    "crates/qtcloud-think-situation",
+    "crates/qtcloud-think-schema",
+]
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"

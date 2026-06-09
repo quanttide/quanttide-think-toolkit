@@ -1,0 +1,4 @@
+[package]
+name = "qtcloud-think-intention"
+version.workspace = true
+edition.workspace = true

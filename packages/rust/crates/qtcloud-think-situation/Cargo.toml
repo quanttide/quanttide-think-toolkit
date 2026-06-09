@@ -1,0 +1,4 @@
+[package]
+name = "qtcloud-think-situation"
+version.workspace = true
+edition.workspace = true

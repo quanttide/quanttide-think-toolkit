@@ -1,0 +1,7 @@
+[package]
+name = "qtcloud-think-schema"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+serde_yaml = "0.9"
