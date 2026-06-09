@@ -14,4 +14,4 @@ pub use intention::*;
 pub use situation::*;
 pub use schema::*;
 pub use domain::Domain;
-pub use situation_relation::{SituationRelation, RelationType, Confidence};
+pub use situation_relation::{SituationRelation, SituationRelationType, Confidence};

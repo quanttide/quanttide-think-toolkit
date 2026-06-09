@@ -4,13 +4,13 @@ use serde::{Deserialize, Serialize};
 pub struct SituationRelation {
     pub source: String,
     pub target: String,
-    pub relation_type: RelationType,
+    pub relation_type: SituationRelationType,
     pub confidence: Confidence,
     pub description: String,
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
-pub enum RelationType {
+pub enum SituationRelationType {
     #[serde(rename = "support")]
     Support,
     #[serde(rename = "conflict")]
