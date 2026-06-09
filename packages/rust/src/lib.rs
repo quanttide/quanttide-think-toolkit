@@ -1,3 +1,3 @@
 //! # quanttide-think
 //!
-//! 量潮思考云 Rust 工具链。
+//! 量潮认知工程Rust工具箱。
