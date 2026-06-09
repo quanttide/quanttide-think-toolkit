@@ -27,4 +27,4 @@ jobs:
             exit 1
           fi
       - name: publish to crates.io
-        run: cargo publish --token ${{ secrets.CRATES_API_TOKEN }}
+        run: cargo publish --allow-dirty --token ${{ secrets.CRATES_API_TOKEN }}
