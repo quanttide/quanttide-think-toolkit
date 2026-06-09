@@ -1,10 +1,10 @@
 [workspace]
 resolver = "2"
 members = [
-    "crates/qtcloud-think-thought",
-    "crates/qtcloud-think-intention",
-    "crates/qtcloud-think-situation",
-    "crates/qtcloud-think-schema",
+    "crates/thought",
+    "crates/intention",
+    "crates/situation",
+    "crates/schema",
 ]
 
 [package]

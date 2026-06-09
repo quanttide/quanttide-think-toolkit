@@ -9,4 +9,4 @@
 ### 包管理
 
 - 添加 crate：`cargo new crates/{name}`，再编辑 `Cargo.toml` 加入 `members`
-- crate 命名前缀 `qtcloud-think-`，crates.io 发布时用全名
+- 目录名使用简短名称（如 `thought`、`intention`），Cargo.toml 中 `name` 使用全名（`qtcloud-think-thought`），crates.io 发布时用全名
