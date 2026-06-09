@@ -4,7 +4,6 @@ use serde::{Deserialize, Serialize};
 pub struct SituationRelation {
     pub source: String,
     pub target: String,
-    #[serde(rename = "type")]
     pub relation_type: RelationType,
     pub confidence: Confidence,
     pub description: String,
