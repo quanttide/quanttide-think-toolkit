@@ -2,14 +2,21 @@
 
 量潮思考云 Rust 工具链。
 
-## Crates
+## 模块
 
-| Crate | 类型 | 说明 |
-|-------|------|------|
-| `quanttide-think-thought` | 流体域 | 想法数据类型：id, title, description, created_at |
-| `quanttide-think-intention` | 固体域 | 意图数据类型：title, description, motivation, agent, level, priority, trigger, risk |
-| `quanttide-think-situation` | 固体域 | 情境数据类型：agenda, ecology, frame, dynamics |
-| `quanttide-think-schema` | 固体域 | 图式数据类型：entities, causals, boundaries, properties, mappings, biases |
+| 模块 | 类型 | 说明 |
+|------|------|------|
+| `thought` | 流体域 | 想法：id, title, description, created_at |
+| `intention` | 固体域 | 意图：title, description, motivation, agent, level, priority, trigger, risk |
+| `situation` | 固体域 | 情境：agenda, ecology, frame, dynamics |
+| `schema` | 固体域 | 图式：entities, causals, boundaries, properties, dynamics, mappings, biases |
+
+所有类型通过根包 `quanttide-think` 统一导出：
+
+```rust
+use quanttide_think::{Thought, Intention, Situation, Schema};
+use quanttide_think::schema::{Entity, Causal, Mapping};
+```
 
 ## 构建
 

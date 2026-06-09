@@ -1,4 +1,4 @@
-use quanttide_think_situation::{Situation, SituationContent};
+use quanttide_think::situation::{Situation, SituationContent};
 use uuid::Uuid;
 
 fn sample_situation() -> Situation {

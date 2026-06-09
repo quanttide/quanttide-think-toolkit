@@ -1,2 +1,0 @@
-pub mod thought;
-pub use thought::*;

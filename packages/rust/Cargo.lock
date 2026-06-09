@@ -273,41 +273,10 @@ dependencies = [
 [[package]]
 name = "quanttide-think"
 version = "0.1.0"
-
-[[package]]
-name = "quanttide-think-intention"
-version = "0.1.0"
-dependencies = [
- "serde",
- "serde_yaml",
- "uuid",
-]
-
-[[package]]
-name = "quanttide-think-schema"
-version = "0.1.0"
-dependencies = [
- "serde",
- "serde_json",
- "serde_yaml",
- "uuid",
-]
-
-[[package]]
-name = "quanttide-think-situation"
-version = "0.1.0"
-dependencies = [
- "serde",
- "serde_yaml",
- "uuid",
-]
-
-[[package]]
-name = "quanttide-think-thought"
-version = "0.1.0"
 dependencies = [
  "chrono",
  "serde",
+ "serde_json",
  "serde_yaml",
  "uuid",
 ]

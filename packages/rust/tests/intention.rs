@@ -1,4 +1,4 @@
-use quanttide_think_intention::{Intention, Agent, Level, Priority, Trigger, Risk};
+use quanttide_think::intention::{Intention, Agent, Level, Priority, Trigger, Risk};
 use uuid::Uuid;
 
 fn sample_intention() -> Intention {

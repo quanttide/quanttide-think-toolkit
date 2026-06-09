@@ -2,11 +2,12 @@
 
 ## Rust项目规范
 
-- Workspace 根包名 `quanttide-think`，四个 crate 互相独立、无编译期依赖
-- 修改 crate 后：先提交推送本仓，再更新主仓库的子模块指针
-- Cargo.lock 必须跟踪（workspace 非 library）
+- 单包 `quanttide-think`，所有类型在 `src/` 下按模块组织
+- 修改后：先提交推送本仓，再更新主仓库的子模块指针
+- Cargo.lock 必须跟踪（二进制包）
 
-### 包管理
+### 模块管理
 
-- 添加 crate：`cargo new crates/{name}`，再编辑 `Cargo.toml` 加入 `members`
-- 目录名使用简短名称（如 `thought`、`intention`），Cargo.toml 中 `name` 使用全名（`quanttide-think-thought`），crates.io 发布时用全名
+- 每个数据类型一个模块文件：`src/{thought,intention,situation,schema}.rs`
+- `src/lib.rs` 声明 `pub mod` 并 `pub use` 重导出全部公共类型
+- 集成测试放在 `tests/` 目录，按模块命名（`thought.rs`、`intention.rs` 等）

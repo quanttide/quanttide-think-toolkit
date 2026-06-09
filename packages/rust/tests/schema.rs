@@ -1,4 +1,4 @@
-use quanttide_think_schema::{
+use quanttide_think::schema::{
     Bias, Causal, Entity, KeyValue, Mapping, Schema, SchemaContent,
 };
 use serde_json::Value;
