@@ -2,6 +2,8 @@
 name = "quanttide-think"
 version = "0.1.0-alpha.2"
 edition = "2021"
+description = "量潮认知工程Rust工具箱 — 数据模型（想法、意图、情境、图式）"
+license = "MIT"
 
 [dependencies]
 serde = { version = "1", features = ["derive"] }
