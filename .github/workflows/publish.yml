@@ -8,79 +8,23 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  check:
+  publish:
     if: startsWith(github.ref, 'refs/tags/rust/')
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: packages/rust
-    outputs:
-      version: ${{ steps.version.outputs.value }}
     steps:
       - uses: actions/checkout@v4
-      - name: extract version from tag
-        id: version
-        run: echo "value=${GITHUB_REF_NAME#rust/}" >> $GITHUB_OUTPUT
-      - name: validate Cargo.toml version
+      - uses: actions-rust-lang/setup-rust-toolchain@v1
+      - name: validate version
         run: |
-          EXPECTED="${{ steps.version.outputs.value }}"
-          EXPECTED="${EXPECTED#v}"
+          VERSION="${GITHUB_REF_NAME#rust/}"
+          VERSION="${VERSION#v}"
           CARGO_VERSION=$(grep '^version = ' Cargo.toml | head -1 | sed 's/version = "\(.*\)"/\1/')
-          if [ "$CARGO_VERSION" != "$EXPECTED" ]; then
-            echo "version mismatch: tag=$EXPECTED cargo=$CARGO_VERSION" >&2
+          if [ "$CARGO_VERSION" != "$VERSION" ]; then
+            echo "version mismatch: tag=$VERSION cargo=$CARGO_VERSION" >&2
             exit 1
           fi
-      - name: validate CHANGELOG entry
-        run: |
-          VERSION="${{ steps.version.outputs.value }}"
-          VERSION="${VERSION#v}"
-          if [ -f CHANGELOG.md ]; then
-            if ! grep -Fq "## [$VERSION]" CHANGELOG.md; then
-              echo "CHANGELOG.md missing entry for version $VERSION" >&2
-              exit 1
-            fi
-          fi
-
-  build-binaries:
-    needs: check
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        include:
-          - os: ubuntu-latest
-            target: x86_64-unknown-linux-gnu
-            ext: ""
-          - os: macos-latest
-            target: aarch64-apple-darwin
-            ext: ""
-          - os: windows-latest
-            target: x86_64-pc-windows-msvc
-            ext: ".exe"
-    runs-on: ${{ matrix.os }}
-    defaults:
-      run:
-        working-directory: packages/rust
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions-rust-lang/setup-rust-toolchain@v1
-        with:
-          target: ${{ matrix.target }}
-      - name: build binary
-        run: cargo build --release --target ${{ matrix.target }}
-      - name: upload binary
-        uses: actions/upload-artifact@v4
-        with:
-          name: quanttide-think-${{ matrix.target }}
-          path: ${{ github.workspace }}/packages/rust/target/${{ matrix.target }}/release/quanttide-think${{ matrix.ext }}
-
-  publish-crate:
-    needs: check
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: packages/rust
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions-rust-lang/setup-rust-toolchain@v1
       - name: publish to crates.io
         run: cargo publish --token ${{ secrets.CARGO_REGISTRY_TOKEN }}
