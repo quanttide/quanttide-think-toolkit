@@ -25,6 +25,8 @@ pub enum SituationRelationType {
 pub enum Confidence {
     #[serde(rename = "high")]
     High,
+    #[serde(rename = "medium")]
+    Medium,
     #[serde(rename = "low")]
     Low,
 }
