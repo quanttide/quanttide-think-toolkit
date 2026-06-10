@@ -1,2 +1,1 @@
-# quanttide-think-toolkit
-量潮认知工程工具箱
+# 量潮认知工程工具箱

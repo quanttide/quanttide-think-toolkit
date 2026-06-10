@@ -27,4 +27,4 @@ cargo test
 
 ## 许可
 
-MIT
+Apache 2.0
