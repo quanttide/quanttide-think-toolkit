@@ -4,7 +4,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.1.0] - 2026-06-10
+
+### Added
+
+- Thought: id, title, description, created_at
+- Intention: title, description, motivation, agent, level, priority, trigger, risk
+- Situation: agenda, ecology, frame, dynamics
+- Schema: entities, causals, boundaries, properties, dynamics, mappings, biases
+- Domain: name + label pair for registry entries
+- SituationRelation: source, target, relation_type, confidence, description
+- RelationType enum: support, conflict, trigger, evolve
+- Confidence enum: high, medium, low
+
+### Changed
+
+- 首个稳定版本发布
+
 ## [0.1.0-rc.1] - 2026-06-10
+
+### Added
+
+- Confidence::Medium variant (from low/high 二值 to 三值)
 
 ### Changed
 
